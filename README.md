@@ -12,3 +12,10 @@
   <img src="https://github.com/hahwul/backbomb/workflows/Go%20Build/badge.svg">
 </h1>
 
+> Cool Guys Don't Look At Explosions 😎
+
+## What is BackBomb?
+blah
+
+## Usage
+blah
