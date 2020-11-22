@@ -7,7 +7,9 @@ RUN apt update
 RUN apt install -y golang ruby python3 openjdk-11-jdk make gcc g++ python3-pip
 
 # Install utility
-RUN apt install -y net-tools firefox wget curl zsh neovim git apt-utils
+RUN apt install -y net-tools firefox wget curl zsh neovim git apt-utils fzf
+RUN wget https://github.com/knqyf263/pet/releases/download/v0.3.0/pet_0.3.0_linux_amd64.deb
+RUN dpkg -i pet_0.3.0_linux_amd64.deb
 
 # Install tools with go-get
 RUN GO111MODULE=on go get -v github.com/projectdiscovery/httpx/cmd/httpx
@@ -18,7 +20,6 @@ RUN GO111MODULE=on go get -v github.com/lc/gau
 RUN go get -v github.com/jaeles-project/gospider
 RUN go get -v github.com/hakluke/hakrawler
 RUN go get -v github.com/OJ/gobuster
-RUN go get -v github.com/michenriksen/gitrob
 RUN go get -v github.com/haccer/subjack
 RUN go get -v github.com/tomnomnom/assetfinder
 RUN go get -v github.com/tomnomnom/waybackurls
