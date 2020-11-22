@@ -54,5 +54,8 @@ RUN curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs \
 # Remove tempdir
 RUN rm -rf /temp
 
+# Copy profiles
+COPY docker/zshrc ~/.zshrc
+
 # Running Shell
 ENTRYPOINT ["/usr/bin/zsh"]
