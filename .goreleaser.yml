@@ -1,4 +1,4 @@
-project_name: TEMPALTE-HAHWUL
+project_name: backbomb
 
 before:
   hooks:
@@ -7,7 +7,7 @@ before:
 builds:
   -
     main: .
-    binary: TEMPALTE-HAHWUL
+    binary: backbomb
     goos:
       - windows
       - linux
@@ -48,15 +48,15 @@ changelog:
 release:
   github:
     owner: hahwul
-    name: TEMPALTE-HAHWUL
+    name: backbomb
 
 brews:
   -
-    name: TEMPALTE-HAHWUL
+    name: backbomb
     tap:
       owner: hahwul
-      name: homebrew-TEMPALTE-HAHWUL
-    url_template: "https://github.com/hahwul/TEMPALTE-HAHWUL/releases/download/{{ .Tag }}/{{ .ArtifactName }}"
+      name: homebrew-backbomb
+    url_template: "https://github.com/hahwul/backbomb/releases/download/{{ .Tag }}/{{ .ArtifactName }}"
     commit_author:
       name: hahwul
       email: hahwul@gmail.com
@@ -64,12 +64,12 @@ brews:
     homepage: "https://www.hahwul.com"
     description: ""
     test: |
-      system "#{bin}/TEMPALTE-HAHWUL version"
+      system "#{bin}/backbomb version"
     install: |
-      bin.install "TEMPALTE-HAHWUL"
+      bin.install "backbomb"
 snapcrafts:
   -
-    name: TEMPALTE-HAHWUL
+    name: backbomb
     # Remember you need to `snapcraft login` first.
     publish: true
     summary: abcd
@@ -79,5 +79,5 @@ snapcrafts:
     license: MIT
 
     apps:
-      TEMPALTE-HAHWUL:
+      backbomb:
         plugs: ["home","network","network-bind"]
