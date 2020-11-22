@@ -7,4 +7,4 @@ RUN apt update
 RUN apt install -y golang ruby python3 openjdk-11-jdk make gcc g++ python3-pip 
 
 # Install utility
-RUN apt install -y net-tools firefox wget curl zsh nvim git
+RUN apt install -y net-tools firefox wget curl zsh neovim git
