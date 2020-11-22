@@ -1,5 +1,8 @@
 FROM ubuntu:20.10
 
+RUN mkdir temp
+WORKDIR temp
+
 # Updating APT package manager
 RUN apt update
 
@@ -47,3 +50,9 @@ RUN source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 # NeoVim
 RUN curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+
+# Remove tempdir
+RUN rm -rf /temp
+
+# Running Shell
+ENTRYPOINT ["/usr/bin/zsh"]
