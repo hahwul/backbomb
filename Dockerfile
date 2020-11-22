@@ -37,7 +37,6 @@ RUN go get github.com/hahwul/dalfox
 RUN go get github.com/hahwul/jwt-hack
 RUN go get github.com/hahwul/mzap
 RUN go get github.com/hahwul/s3reverse
-RUN go get -u github.com/sensepost/gowitness
 RUN go get github.com/m4ll0k/Aron
 
 # ZSH Extension
