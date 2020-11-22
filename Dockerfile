@@ -7,14 +7,14 @@ RUN apt update
 RUN apt install -y golang ruby python3 openjdk-11-jdk make gcc g++ python3-pip
 
 # Install utility
-RUN apt install -y net-tools firefox wget curl zsh neovim git
+RUN apt install -y net-tools firefox wget curl zsh neovim git apt-utils
 
 # Install tools with go-get
 RUN GO111MODULE=on go get -v github.com/projectdiscovery/httpx/cmd/httpx
 RUN GO111MODULE=on go get -v github.com/projectdiscovery/subfinder/cmd/subfinder
 RUN GO111MODULE=on go get -v github.com/projectdiscovery/nuclei/cmd/nuclei
 RUN GO111MODULE=on go get -v github.com/projectdiscovery/naabu/cmd/naabu
-RUN GO111MODULE=on go get -v github.com/projectdiscovery/subfinder/cmd/subfinder
+RUN GO111MODULE=on go get -u -v github.com/projectdiscovery/subfinder/v2/cmd/subfinder
 RUN GO111MODULE=on go get -v github.com/lc/gau
 RUN go get -v github.com/jaeles-project/gospider
 RUN go get -v github.com/hakluke/hakrawler
