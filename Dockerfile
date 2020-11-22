@@ -42,9 +42,8 @@ RUN go get github.com/m4ll0k/Aron
 # ZSH Extension
 RUN sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh) --keep-zshrc --skip-chsh"
 RUN git clone https://github.com/zsh-users/zsh-syntax-highlighting.git
-RUN echo "source ${(q-)PWD}/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" >> ${ZDOTDIR:-$HOME}/.zshrc
-RUN git clone https://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-autosuggestions
-RUN source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+RUN echo "source ${PWD}/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" >> ${ZDOTDIR:-$HOME}/.zshrc
+RUN git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestionss
 
 # NeoVim
 RUN curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs \
