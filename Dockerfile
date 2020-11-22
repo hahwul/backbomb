@@ -15,30 +15,30 @@ RUN wget https://github.com/knqyf263/pet/releases/download/v0.3.0/pet_0.3.0_linu
 RUN dpkg -i pet_0.3.0_linux_amd64.deb
 
 # Install tools with go-get
-RUN GO111MODULE=on go get -v github.com/projectdiscovery/httpx/cmd/httpx
-RUN GO111MODULE=on go get -v github.com/projectdiscovery/nuclei/cmd/nuclei
-RUN GO111MODULE=on go get -v github.com/projectdiscovery/naabu/cmd/naabu
-RUN GO111MODULE=on go get -u -v github.com/projectdiscovery/subfinder/v2/cmd/subfinder
-RUN GO111MODULE=on go get -v github.com/lc/gau
-RUN go get -v github.com/jaeles-project/gospider
-RUN go get -v github.com/hakluke/hakrawler
-RUN go get -v github.com/OJ/gobuster
-RUN go get -v github.com/haccer/subjack
-RUN go get -v github.com/tomnomnom/assetfinder
-RUN go get -v github.com/tomnomnom/waybackurls
-RUN go get -v github.com/tomnomnom/meg
-RUN go get -v github.com/tomnomnom/gf
-RUN go get -v github.com/tomnomnom/gron
-RUN go get -v github.com/tomnomnom/qsreplace
-RUN go get -v github.com/tomnomnom/unfurl
-RUN go get -v github.com/asciimoo/wuzz
-RUN go get -v github.com/ffuf/ffuf
-RUN go get -v github.com/hahwul/dalfox
-RUN go get -v github.com/hahwul/jwt-hack
-RUN go get -v github.com/hahwul/mzap
-RUN go get -v github.com/hahwul/s3reverse
-RUN go get -v github.com/sensepost/gowitness
-RUN go get -v github.com/m4ll0k/Aron
+RUN GO111MODULE=on go get github.com/projectdiscovery/httpx/cmd/httpx
+RUN GO111MODULE=on go get github.com/projectdiscovery/nuclei/cmd/nuclei
+RUN GO111MODULE=on go get github.com/projectdiscovery/naabu/cmd/naabu
+RUN GO111MODULE=on go get github.com/projectdiscovery/subfinder/v2/cmd/subfinder
+RUN GO111MODULE=on go get github.com/lc/gau
+RUN go get github.com/jaeles-project/gospider
+RUN go get github.com/hakluke/hakrawler
+RUN go get github.com/OJ/gobuster
+RUN go get github.com/haccer/subjack
+RUN go get github.com/tomnomnom/assetfinder
+RUN go get github.com/tomnomnom/waybackurls
+RUN go get github.com/tomnomnom/meg
+RUN go get github.com/tomnomnom/gf
+RUN go get github.com/tomnomnom/gron
+RUN go get github.com/tomnomnom/qsreplace
+RUN go get github.com/tomnomnom/unfurl
+RUN go get github.com/asciimoo/wuzz
+RUN go get github.com/ffuf/ffuf
+RUN go get github.com/hahwul/dalfox
+RUN go get github.com/hahwul/jwt-hack
+RUN go get github.com/hahwul/mzap
+RUN go get github.com/hahwul/s3reverse
+RUN go get github.com/sensepost/gowitness
+RUN go get github.com/m4ll0k/Aron
 
 # ZSH Extension
 RUN sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh) --keep-zshrc --skip-chsh"
