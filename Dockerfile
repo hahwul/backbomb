@@ -11,7 +11,6 @@ RUN apt install -y net-tools firefox wget curl zsh neovim git apt-utils
 
 # Install tools with go-get
 RUN GO111MODULE=on go get -v github.com/projectdiscovery/httpx/cmd/httpx
-RUN GO111MODULE=on go get -v github.com/projectdiscovery/subfinder/cmd/subfinder
 RUN GO111MODULE=on go get -v github.com/projectdiscovery/nuclei/cmd/nuclei
 RUN GO111MODULE=on go get -v github.com/projectdiscovery/naabu/cmd/naabu
 RUN GO111MODULE=on go get -u -v github.com/projectdiscovery/subfinder/v2/cmd/subfinder
@@ -46,3 +45,5 @@ RUN source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 # NeoVim
 RUN curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+
+RUN sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh) --keep-zshrc"
