@@ -17,5 +17,10 @@
 ## What is BackBomb?
 Dockerized penetration-testing/bugbounty/app-sec testing environment
 
+## Requirements
+This tool uses a docker cli. Docker installation is required. 
+
+https://docs.docker.com/get-docker
+
 ## Usage
 blah
