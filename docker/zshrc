@@ -1,0 +1,14 @@
+ZSH_THEME="cloud"
+export ZSH="/root/.oh-my-zsh"
+plugins=(git)
+source $ZSH/oh-my-zsh.sh
+export PATH=$PATH:$HOME/go/bin/
+
+function pet-select() {
+  BUFFER=$(pet search --query "$LBUFFER")
+  CURSOR=$#BUFFER
+  zle redisplay
+}
+zle -N pet-select
+stty -ixon
+bindkey '^s' pet-select
