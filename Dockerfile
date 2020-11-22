@@ -55,7 +55,7 @@ RUN curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs \
 RUN rm -rf /temp
 
 # Copy profiles
-COPY docker/zshrc ~/.zshrc
+COPY docker/zshrc /root/.zshrc
 
 # Running Shell
 ENTRYPOINT ["/usr/bin/zsh"]
