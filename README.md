@@ -1,3 +1,6 @@
+
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/ea74e272d1d6486da19d469881e5c176)](https://app.codacy.com/gh/hahwul/backbomb?utm_source=github.com&utm_medium=referral&utm_content=hahwul/backbomb&utm_campaign=Badge_Grade)
+
 <h1 align="center">
   <br>
   <a href=""><img src="#" alt="" width="500px;"></a>
