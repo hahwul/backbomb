@@ -10,7 +10,7 @@ RUN apt update
 RUN apt install -y golang ruby python3 openjdk-11-jdk make gcc g++ python3-pip
 
 # Install utility
-RUN apt install -y net-tools firefox wget curl zsh neovim git apt-utils fzf
+RUN apt install -y net-tools firefox wget curl zsh neovim git apt-utils fzf nmap jq
 RUN wget https://github.com/knqyf263/pet/releases/download/v0.3.0/pet_0.3.0_linux_amd64.deb
 RUN dpkg -i pet_0.3.0_linux_amd64.deb
 
@@ -48,6 +48,10 @@ RUN git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.
 # NeoVim
 RUN curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+
+# Hack-pet
+RUN curl -fLo ~/.config/pet/snippet.toml —create-dirs \
+> https://raw.githubusercontent.com/hahwul/hack-pet/master/hackpet.toml
 
 # Remove tempdir
 RUN rm -rf /temp
