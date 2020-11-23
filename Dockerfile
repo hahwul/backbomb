@@ -46,12 +46,11 @@ RUN echo "source ${PWD}/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" >> 
 RUN git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestionss
 
 # NeoVim
-RUN curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs \
-    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+RUN curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 # Hack-pet
-RUN curl -fLo ~/.config/pet/snippet.toml --create-dirs \
-> https://raw.githubusercontent.com/hahwul/hack-pet/master/hackpet.toml
+RUN pet list
+RUN curl -fLo ~/.config/pet/snippet.toml --create-dirs https://raw.githubusercontent.com/hahwul/hack-pet/master/hackpet.toml
 
 # Remove tempdir
 RUN rm -rf /temp
