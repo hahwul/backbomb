@@ -50,7 +50,7 @@ RUN curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 # Hack-pet
-RUN curl -fLo ~/.config/pet/snippet.toml —create-dirs \
+RUN curl -fLo ~/.config/pet/snippet.toml --create-dirs \
 > https://raw.githubusercontent.com/hahwul/hack-pet/master/hackpet.toml
 
 # Remove tempdir
