@@ -1,6 +1,6 @@
 <h1 align="center">
   <br>
-  <a href=""><img src="https://user-images.githubusercontent.com/13212227/99977962-af33c400-2de8-11eb-8eef-649560591cd8.png" alt="" width="500px;"></a>
+  <a href=""><img src="https://user-images.githubusercontent.com/13212227/100126258-1329bb80-2ec1-11eb-915b-7a536a2524e0.png" alt="" width="500px;"></a>
   <br>
   <img src="https://img.shields.io/github/v/release/hahwul/backbomb?style=flat-square"> 
   <a href="https://snapcraft.io/backbomb"><img src="https://snapcraft.io/backbomb/badge.svg" /></a>
