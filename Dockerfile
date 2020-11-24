@@ -1,16 +1,21 @@
 FROM ubuntu:20.10
 
-RUN mkdir temp
-WORKDIR temp
+ENV DEBIAN_FRONTEND=noninteractive
+
+RUN mkdir /backbomb
+RUN mkdir /temp
+RUN mkdir /app
+RUN mkdir /app/postgres
+WORKDIR /temp
 
 # Updating APT package manager
 RUN apt update
 
-# Install language [golang/python/ruby/java] and etc..
-RUN apt install -y golang ruby python3 openjdk-11-jdk make gcc g++ python3-pip
+# Install language and base [golang/python/ruby/java] and etc..
+RUN apt install -y golang ruby python3 openjdk-11-jdk make gcc g++ python3-pip postgresql
 
 # Install utility
-RUN apt install -y net-tools firefox wget curl zsh neovim git apt-utils fzf nmap jq
+RUN apt install -y net-tools firefox wget curl zsh neovim git apt-utils fzf nmap jq rsync
 RUN wget https://github.com/knqyf263/pet/releases/download/v0.3.0/pet_0.3.0_linux_amd64.deb
 RUN dpkg -i pet_0.3.0_linux_amd64.deb
 
@@ -39,6 +44,16 @@ RUN go get github.com/hahwul/mzap
 RUN go get github.com/hahwul/s3reverse
 RUN go get github.com/m4ll0k/Aron
 
+# Setup PostgreSQL and Start
+RUN echo data_directory = \'/app/postgres/postgresql/12/main\' >> /etc/postgresql/12/main/postgresql.conf
+RUN rsync -av /var/lib/postgresql /app/postgres
+
+# Set Metasploit
+RUN curl https://raw.githubusercontent.com/rapid7/metasploit-omnibus/master/config/templates/metasploit-framework-wrappers/msfupdate.erb > msfinstall
+RUN chmod 755 msfinstall
+RUN ./msfinstall
+COPY docker/msfdatabase.yml /opt/metasploit-framework/embedded/framework/config/database.yml
+
 # ZSH Extension
 RUN sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh) --keep-zshrc --skip-chsh"
 RUN git clone https://github.com/zsh-users/zsh-syntax-highlighting.git
@@ -58,5 +73,9 @@ RUN rm -rf /temp
 # Copy profiles
 COPY docker/zshrc /root/.zshrc
 
+COPY docker/run.sh /backbomb/run.sh
+COPY docker/postgres.sql /backbomb/postgres.sql
+RUN chmod 755 /backbomb/run.sh
+
 # Running Shell
-ENTRYPOINT ["/usr/bin/zsh"]
+ENTRYPOINT sh -c /backbomb/run.sh
