@@ -1,24 +1,28 @@
 package docker
 
 import (
-	"fmt"
+	"context"
+	"io"
+	"os"
 
-	godocker "github.com/fsouza/go-dockerclient"
-	"github.com/hahwul/backbomb/pkg/printing"
+	"github.com/docker/docker/api/types"
+	"github.com/docker/docker/client"
+	printing "github.com/hahwul/backbomb/pkg/printing"
 )
 
 // Init is docker init func
 func Init() {
-	client, err := godocker.NewClientFromEnv()
+	printing.Info("Pulling.. backbomb image")
+
+	ctx := context.Background()
+	cli, err := client.NewClientWithOpts(client.FromEnv, client.WithAPIVersionNegotiation())
 	if err != nil {
 		panic(err)
 	}
 
-	opt := godocker.CreateVolumeOptions{
-		Name: "backbomb",
+	reader, err := cli.ImagePull(ctx, "hahwul/backbomb", types.ImagePullOptions{})
+	if err != nil {
+		panic(err)
 	}
-	v, err := client.CreateVolume(opt)
-	printing.ErrorCheck(err)
-	fmt.Println(v)
-
+	io.Copy(os.Stdout, reader)
 }

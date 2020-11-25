@@ -1,8 +1,7 @@
 package cmd
 
 import (
-	"fmt"
-
+	"github.com/hahwul/backbomb/pkg/docker"
 	"github.com/spf13/cobra"
 )
 
@@ -11,13 +10,12 @@ var runCmd = &cobra.Command{
 	Use:   "run",
 	Short: "Start backbomb",
 	Run: func(cmd *cobra.Command, args []string) {
-		fmt.Println("run called")
+		docker.Run()
 	},
 }
 
 func init() {
 	rootCmd.AddCommand(runCmd)
-
 	// Here you will define your flags and configuration settings.
 
 	// Cobra supports Persistent Flags which will work for this command

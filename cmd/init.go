@@ -1,8 +1,6 @@
 package cmd
 
 import (
-	"fmt"
-
 	"github.com/spf13/cobra"
 	docker "github.com/hahwul/backbomb/pkg/docker"
 )
@@ -12,7 +10,6 @@ var initCmd = &cobra.Command{
 	Use:   "init",
 	Short: "Initialization backbomb docker image",
 	Run: func(cmd *cobra.Command, args []string) {
-		fmt.Println("init called")
 		docker.Init()
 	},
 }
