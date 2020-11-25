@@ -16,7 +16,7 @@ RUN apt install -y golang ruby python3 openjdk-11-jdk make gcc g++ python3-pip p
 
 # Install utility
 RUN apt install -y net-tools firefox curl zsh neovim git apt-utils fzf nmap jq rsync
-RUN curl -O https://github.com/knqyf263/pet/releases/download/v0.3.0/pet_0.3.0_linux_amd64.deb
+RUN curl -LO https://github.com/knqyf263/pet/releases/download/v0.3.0/pet_0.3.0_linux_amd64.deb
 RUN dpkg -i pet_0.3.0_linux_amd64.deb
 
 # Install tools with go-get
