@@ -20,7 +20,7 @@ var rootCmd = &cobra.Command{
 	Cool Guys Don't Look At Explosions 😎💣`,
 }
 
-// This is called by main.main(). It only needs to happen once to the rootCmd.
+// Execute is execute
 func Execute() {
 	if err := rootCmd.Execute(); err != nil {
 		fmt.Println(err)
