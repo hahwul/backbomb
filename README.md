@@ -20,5 +20,30 @@ This tool uses a docker cli. Docker installation is required.
 
 https://docs.docker.com/get-docker
 
+## Installation
+```
+$ go get -u github.com/hahwul/backbomb
+```
+
 ## Usage
-blah
+### Initialization
+```
+$ backbomb init
+```
+
+After initialization, the docker image and volume are prepared 😎
+```
+$ docker images
+REPOSITORY                                       TAG                 IMAGE ID            CREATED             SIZE
+hahwul/backbomb                                  latest              749a17299401        23 hours ago        3.97GB
+```
+```
+$ docker volume list | grep backbomb
+local               backbomb
+```
+
+### Run
+`run` command allows you to omit and drive additional docker execution options, such as `--mount`.
+```
+$ backbomb run
+```
