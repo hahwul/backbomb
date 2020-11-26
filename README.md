@@ -20,7 +20,7 @@
 - [Getting started](#getting-started)
   * [Requirements](#requirements)
   * [Installation](#installation)
-  * [Usage](#usage)
+- [Usage](#usage)
   * [Initialization](#initialization)
   * [Run](#run)
 
@@ -38,7 +38,7 @@ https://docs.docker.com/get-docker
 $ go get -u github.com/hahwul/backbomb
 ```
 
-### Usage 
+## Usage 
 ```
 @@@@@@@   @@@@@@   @@@@@@@ @@@  @@@ @@@@@@@   @@@@@@  @@@@@@@@@@  @@@@@@@
 @@!  @@@ @@!  @@@ !@@      @@!  !@@ @@!  @@@ @@!  @@@ @@! @@! @@! @@!  @@@
