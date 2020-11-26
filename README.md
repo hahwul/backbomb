@@ -25,7 +25,35 @@ https://docs.docker.com/get-docker
 $ go get -u github.com/hahwul/backbomb
 ```
 
-## Usage
+## Getting started
+### Usage 
+```
+@@@@@@@   @@@@@@   @@@@@@@ @@@  @@@ @@@@@@@   @@@@@@  @@@@@@@@@@  @@@@@@@
+@@!  @@@ @@!  @@@ !@@      @@!  !@@ @@!  @@@ @@!  @@@ @@! @@! @@! @@!  @@@
+@!@!@!@  @!@!@!@! !@!      @!@@!@!  @!@!@!@  @!@  !@! @!! !!@ @!@ @!@!@!@
+!!:  !!! !!:  !!! :!!      !!: :!!  !!:  !!! !!:  !!! !!:     !!: !!:  !!!
+:: : ::   :   : :  :: :: :  :   ::: :: : ::   : :. :   :      :   :: : ::
+
+Dockerized penetration-testing/bugbounty/app-sec testing environment
+	Cool Guys Don't Look At Explosions 😎💣
+
+Usage:
+  backbomb [command]
+
+Available Commands:
+  help        Help about any command
+  init        Initialization backbomb docker image
+  run         Start backbomb
+  update      Update hahwul/backbomb image
+  version     Show version
+
+Flags:
+      --config string   config file (default is $HOME/.backbomb.yaml)
+  -h, --help            help for backbomb
+
+Use "backbomb [command] --help" for more information about a command.
+```
+
 ### Initialization
 ```
 $ backbomb init
