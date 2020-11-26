@@ -16,20 +16,28 @@
 
 > Cool Guys Don't Look At Explosions 😎💣
 
+- [What is BackBomb?](#what-is-backbomb)
+- [Getting started](#getting-started)
+  * [Requirements](#requirements)
+  * [Installation](#installation)
+  * [Usage](#usage)
+  * [Initialization](#initialization)
+  * [Run](#run)
+
 ## What is BackBomb?
 Dockerized penetration-testing/bugbounty/app-sec testing environment
 
-## Requirements
+## Getting started
+### Requirements
 This tool uses a docker cli. Docker installation is required. 
 
 https://docs.docker.com/get-docker
 
-## Installation
+### Installation
 ```
 $ go get -u github.com/hahwul/backbomb
 ```
 
-## Getting started
 ### Usage 
 ```
 @@@@@@@   @@@@@@   @@@@@@@ @@@  @@@ @@@@@@@   @@@@@@  @@@@@@@@@@  @@@@@@@
