@@ -15,9 +15,14 @@ RUN apt update
 RUN apt install -y golang ruby python3 openjdk-11-jdk make gcc g++ python3-pip postgresql
 
 # Install utility
-RUN apt install -y net-tools firefox curl zsh neovim git apt-utils fzf nmap jq rsync
-RUN curl -LO https://github.com/knqyf263/pet/releases/download/v0.3.0/pet_0.3.0_linux_amd64.deb
+RUN apt install -y net-tools firefox curl zsh neovim git apt-utils fzf nmap jq rsync httpie
+RUN http --download  https://github.com/knqyf263/pet/releases/download/v0.3.0/pet_0.3.0_linux_amd64.deb
 RUN dpkg -i pet_0.3.0_linux_amd64.deb
+
+# Install ZAP
+RUN http --download https://github.com/zaproxy/zaproxy/releases/download/w2020-11-23/ZAP_WEEKLY_D-2020-11-23.zip
+RUN unzip ZAP_WEEKLY_D-2020-11-23.zip
+RUN mv ZAP_D-2020-11-23 /app/ZAP
 
 # Install tools with go-get
 RUN GO111MODULE=on go get github.com/projectdiscovery/httpx/cmd/httpx
