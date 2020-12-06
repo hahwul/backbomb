@@ -1,8 +1,8 @@
 package cmd
 
 import (
-	"fmt"
 
+	docker "github.com/hahwul/backbomb/pkg/docker"
 	"github.com/spf13/cobra"
 )
 
@@ -11,7 +11,7 @@ var updateCmd = &cobra.Command{
 	Use:   "update",
 	Short: "Update hahwul/backbomb image",
 	Run: func(cmd *cobra.Command, args []string) {
-		fmt.Println("update called")
+		docker.Update()
 	},
 }
 

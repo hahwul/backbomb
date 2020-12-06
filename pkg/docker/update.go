@@ -5,7 +5,7 @@ import (
 )
 
 // Init is docker init func
-func Init() {
-	printing.Info("Initialize backbomb")
+func Update() {
+	printing.Info("Start update image to latest")
 	PullingLatestImage()
 }
