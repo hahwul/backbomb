@@ -5,6 +5,7 @@ import (
 
 	"github.com/docker/docker/api/types"
 	"github.com/docker/docker/api/types/container"
+	"github.com/docker/docker/api/types/mount"
 	"github.com/docker/docker/client"
 	"github.com/hahwul/backbomb/pkg/printing"
 )
@@ -17,10 +18,18 @@ func Run() {
 
 	resp, err := cli.ContainerCreate(ctx, &container.Config{
 		Image: "hahwul/backbomb",
-		Cmd:   []string{"--mount","source=backbomb,target=/app"},
+		//Cmd:   []string{"--mount","source=backbomb,target=/app"},
 		//-it --mount source=backbomb,target=/app
 		Tty:   true,
-	}, nil, nil, "")
+	}, &container.HostConfig{
+        Mounts: []mount.Mount{
+            {
+                Type:   mount.TypeVolume,
+                Source: "backbomb",
+                Target: "/app",
+            },
+        },
+    	},nil, "")
 	if err != nil {
 		printing.ErrorCheck(err)
 		panic(err)

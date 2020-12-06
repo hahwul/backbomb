@@ -8,4 +8,5 @@ import (
 func Init() {
 	printing.Info("Initialize backbomb")
 	PullingLatestImage()
+	CreateVolume()	
 }
