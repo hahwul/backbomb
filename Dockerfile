@@ -4,6 +4,7 @@ ENV DEBIAN_FRONTEND=noninteractive
 
 RUN mkdir /backbomb
 RUN mkdir /temp
+RUN mkdir /project
 RUN mkdir /app
 RUN mkdir /app/postgres
 WORKDIR /temp
@@ -81,6 +82,8 @@ COPY docker/zshrc /root/.zshrc
 COPY docker/run.sh /backbomb/run.sh
 COPY docker/postgres.sql /backbomb/postgres.sql
 RUN chmod 755 /backbomb/run.sh
+
+WORKDIR /project
 
 # Running Shell
 ENTRYPOINT sh -c /backbomb/run.sh

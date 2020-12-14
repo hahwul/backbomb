@@ -19,4 +19,10 @@ plugins=(
   zsh-autosuggestions
 )
 
+# ALIAS
 alias vim=nvim
+
+# FUNCTION
+help(){
+	echo "Help"
+}

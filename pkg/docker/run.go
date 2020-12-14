@@ -2,6 +2,8 @@ package docker
 
 import (
 	"context"
+	"os/exec"
+	"os"
 
 	"github.com/docker/docker/api/types"
 	"github.com/docker/docker/api/types/container"
@@ -29,7 +31,7 @@ func Run() {
                 Target: "/app",
             },
         },
-    	},nil, "")
+	},nil, "")
 	if err != nil {
 		printing.ErrorCheck(err)
 		panic(err)
@@ -39,6 +41,12 @@ func Run() {
 		panic(err)
 	}
 	printing.Info(resp.ID)
+	printing.Info("Starting backbomb 💣")
+	cmd := exec.Command("sh", "-c", "docker exec -it "+resp.ID+" zsh")
+	cmd.Stdout = os.Stdout
+	cmd.Stdin = os.Stdin
+	cmd.Stderr = os.Stderr
+	cmd.Run()
 }
 
 
