@@ -47,6 +47,10 @@ func Run() {
 	cmd.Stdin = os.Stdin
 	cmd.Stderr = os.Stderr
 	cmd.Run()
+	cmd.Wait()
+	cmd = exec.Command("sh", "-c", "docker kill "+resp.ID)
+	cmd.Run()
+	cmd.Wait()
 }
 
 
