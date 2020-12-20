@@ -121,7 +121,7 @@ INFO[0003] Finish!
 Coming soon!
 
 ## Persistant data and result
-The `/app` path is backbomb PV (Persistent Volume) which stores data that needs to be maintained continuously, including Postgres. This means sharing data between the host and the docker, and of course it is not stored on a remote server. Since db interlocking services such as metasploit and find domain are established in advance, you can use them comfortably without any additional interlocking process.
+The `/app` path is backbomb [PV(Persistent Volume)](https://docs.docker.com/storage/volumes/) which stores data that needs to be maintained continuously, including Postgres. This means sharing data between the host and the docker, and of course it is not stored on a remote server. Since db interlocking services such as metasploit and find domain are established in advance, you can use them comfortably without any additional interlocking process.
 
 e.g
 ```
