@@ -26,6 +26,7 @@
   * [Update](#update)
   * [Uninstall](#uninstall)
 - [Persistant data and result](#persistant-data-and-result)
+- [Contributors](#contributors)
 
 ## What is BackBomb?
 Dockerized penetration-testing/bugbounty/app-sec testing environment
@@ -139,3 +140,6 @@ msf6 > db_status
 msf6 > workspace
 * default
 ```
+
+## Contributors
+![](/CONTRIBUTORS.svg)
