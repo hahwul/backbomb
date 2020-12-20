@@ -16,13 +16,16 @@
 
 > Cool Guys Don't Look At Explosions 😎💣
 
-- [What is BackBomb?](#what-is-backbomb)
+- [What is BackBomb?](#what-is-backbomb-)
 - [Getting started](#getting-started)
   * [Requirements](#requirements)
   * [Installation](#installation)
 - [Usage](#usage)
   * [Initialization](#initialization)
   * [Run](#run)
+  * [Update](#update)
+  * [Uninstall](#uninstall)
+- [Persistant data and result](#persistant-data-and-result)
 
 ## What is BackBomb?
 Dockerized penetration-testing/bugbounty/app-sec testing environment
@@ -85,4 +88,54 @@ local               backbomb
 `run` command allows you to omit and drive additional docker execution options, such as `--mount`.
 ```
 $ backbomb run
+```
+
+sample
+```
+$ backbomb run
+INFO[0000] Starting backbomb 💣
+INFO[0000] The docker client object has been created
+INFO[0000] Container creating job successful
+INFO[0000] 02267b3954516c500e0d4e826c5c4af8d911a1d391352cd3f915e98975b20f83
+INFO[0000] Connecting backbomb container
+☁  /project  ll
+total 0
+
+... testing all the things 😁 ...
+
+☁  /project  exit
+INFO[0014] Start the shutdown process.
+INFO[0014] Finish
+```
+
+### Update
+You can use the update command to update the image.
+```
+$ backbomb update
+INFO[0000] Start update image to latest
+INFO[0000] Pulling backbomb latest image
+INFO[0003] Finish!
+```
+
+### Uninstall
+Coming soon!
+
+## Persistant data and result
+The `/app` path is backbomb PV (Persistent Volume) which stores data that needs to be maintained continuously, including Postgres. This means sharing data between the host and the docker, and of course it is not stored on a remote server. Since db interlocking services such as metasploit and find domain are established in advance, you can use them comfortably without any additional interlocking process.
+
+e.g
+```
+☁  /project  msfconsole
+...snip..
++ -- --=[ 2087 exploits - 1127 auxiliary - 354 post       ]
++ -- --=[ 592 payloads - 45 encoders - 10 nops            ]
++ -- --=[ 7 evasion                                       ]
+
+Metasploit tip: When in a module, use back to go
+back to the top level prompt
+
+msf6 > db_status
+[*] Connected to msf. Connection type: postgresql.
+msf6 > workspace
+* default
 ```
