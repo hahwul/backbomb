@@ -8,4 +8,5 @@ import (
 func Update() {
 	printing.Info("Start update image to latest")
 	PullingLatestImage()
+	printing.Info("Finish!")
 }

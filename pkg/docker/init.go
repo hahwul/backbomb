@@ -9,4 +9,5 @@ func Init() {
 	printing.Info("Initialize backbomb")
 	PullingLatestImage()
 	CreateVolume()	
+	printing.Info("Finish!")
 }
