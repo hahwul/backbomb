@@ -62,7 +62,7 @@ brews:
       email: hahwul@gmail.com
     folder: Formula
     homepage: "https://www.hahwul.com"
-    description: ""
+    description: "Dockerized penetration-testing/bugbounty/app-sec testing environment"
     test: |
       system "#{bin}/backbomb version"
     install: |
@@ -72,8 +72,8 @@ snapcrafts:
     name: backbomb
     # Remember you need to `snapcraft login` first.
     publish: true
-    summary: abcd
-    description: abcd
+    summary: Dockerized penetration-testing/bugbounty/app-sec testing environment
+    description: Dockerized penetration-testing/bugbounty/app-sec testing environment
     grade: stable
     confinement: strict
     license: MIT
