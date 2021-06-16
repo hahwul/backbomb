@@ -17,6 +17,6 @@ require (
 	github.com/opencontainers/image-spec v1.0.1 // indirect
 	github.com/sirupsen/logrus v1.7.0
 	github.com/spf13/cobra v1.1.3
-	github.com/spf13/viper v1.7.1
+	github.com/spf13/viper v1.8.0
 	gotest.tools/v3 v3.0.3 // indirect
 )
