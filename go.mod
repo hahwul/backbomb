@@ -6,7 +6,7 @@ require (
 	github.com/Microsoft/go-winio v0.4.15 // indirect
 	github.com/containerd/containerd v1.4.1 // indirect
 	github.com/docker/distribution v2.7.1+incompatible // indirect
-	github.com/docker/docker v17.12.0-ce-rc1.0.20200505174321-1655290016ac+incompatible
+	github.com/docker/docker v20.10.11+incompatible
 	github.com/docker/go-connections v0.4.0 // indirect
 	github.com/docker/go-units v0.4.0 // indirect
 	github.com/gorilla/mux v1.8.0 // indirect
